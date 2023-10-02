@@ -10,28 +10,28 @@ namespace MetodiConversioni
     {
         static void Main(string[] args)
         {
-            bool[] b = { true, false, true, false }; 
+            bool[] b = { true, false, true, false }; //numero binario
             Console.WriteLine("Conversione da binario a intero:");
             Console.WriteLine(Convert_Binario_To_Intero(b));
             Console.WriteLine("===============");
-            int[] dp = { 10, 100, 2, 4 }; 
+            int[] dp = { 10, 100, 2, 4 }; //numero decimale puntato
             Console.WriteLine("Conversione da decimale puntato a intero:");
             Console.WriteLine(Convert_Decimale_Puntato_To_Decimale(dp));
             Console.ReadLine();
         }
         static int Convert_Binario_To_Intero(bool[] b)
         {
-            int nIntero = 0;
-            int esponente = 0;
-            for (int i = b.Length - 1; i >= 0; i--) 
+            int nIntero = 0; //numero intero che verrà convertito
+            int esponente = 0; //viene incrementato ad ogni ciclo
+            for (int i = b.Length - 1; i >= 0; i--) //ciclo che viene decrementato ad ogni iterazione
             {
                 if (b[i])
                 {
-                    nIntero = nIntero + (int)Math.Pow(2, esponente);
+                    nIntero = nIntero + (int)Math.Pow(2, esponente); //formula di conversione
                 }
                 esponente++;
             }
-            return nIntero;
+            return nIntero; //numero intero convertito
         }
         static int Convert_Decimale_Puntato_To_Decimale(int[] dp)
         {
